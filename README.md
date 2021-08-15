@@ -91,5 +91,5 @@ This section has moved here:
 [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 ////////////////////////
 
-- у нас изначально контакты не пустые были. а предлагают сделать пустыми.
+- убрать везде phonebook и переименовать на contact
 - куда проверку кидать по наличию имени в контактах?

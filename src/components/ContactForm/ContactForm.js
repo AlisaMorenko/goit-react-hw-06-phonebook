@@ -83,15 +83,15 @@
 // ContactForm.propTypes = {
 //   onAdd: PropTypes.func.isRequired,
 // };
+//2.0
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import phonebookActions from '../../redux/phonebook-actions';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import * as actions from '../../redux/phonebook-actions';
 import shortid from 'shortid';
 
 import styles from './contactForm.module.css';
 
-function ContactForm({ onAdd }) {
+export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -116,9 +116,10 @@ function ContactForm({ onAdd }) {
   };
 
   //add new contact
+  const dispatch = useDispatch();
   const submit = e => {
     e.preventDefault();
-    onAdd({ name, number });
+    dispatch(actions.addContact({ name, number }));
     reset();
   };
 
@@ -167,13 +168,4 @@ function ContactForm({ onAdd }) {
   );
 }
 
-const mapDispatchToProps = dispatch => ({
-  onAdd: ({ name, number }) =>
-    dispatch(phonebookActions.addContact({ name, number })),
-});
-
-ContactForm.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-};
-
-export default connect(null, mapDispatchToProps)(ContactForm);
+//3.0
