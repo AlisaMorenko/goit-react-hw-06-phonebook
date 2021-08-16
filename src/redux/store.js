@@ -67,7 +67,7 @@ export const persistConfig = {
 };
 
 export const store = configureStore({
-  reducer: { phonebook: persistReducer(persistConfig, phonebookReducer) },
+  reducer: { contacts: persistReducer(persistConfig, phonebookReducer) },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

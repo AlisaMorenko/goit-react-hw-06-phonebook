@@ -67,19 +67,6 @@ import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 
 export default function App() {
-  //
-  //     //check added name
-  //     const addedName = contact.name;
-  //     const checkContactsName = contacts.find(
-  //       contact => contact.name.toLowerCase() === addedName.toLowerCase(),
-  //     );
-  //     if (checkContactsName) {
-  //       alert(`${addedName} is already in contacts!`);
-  //       return;
-  //     }
-  //     setContacts(contacts => [contact, ...contacts]);
-  //   };
-
   return (
     <>
       <h1>Phonebook</h1>
@@ -90,6 +77,3 @@ export default function App() {
     </>
   );
 }
-//all done except name check
-
-//3.0

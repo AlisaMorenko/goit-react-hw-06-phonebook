@@ -66,11 +66,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../redux/phonebook-actions';
+import { getVisibleContacts } from '../../redux/phonebook-selectors';
 import ContactListItem from '../ContactListItem';
 
 export default function ContactList() {
   const dispatch = useDispatch();
-
   const contacts = useSelector(getVisibleContacts);
 
   return (
@@ -87,10 +87,3 @@ export default function ContactList() {
     </ul>
   );
 }
-
-const getVisibleContacts = state => {
-  const { filter, items } = state.phonebook;
-  return items.filter(item =>
-    item.name.toLowerCase().includes(filter.toLowerCase()),
-  );
-};
